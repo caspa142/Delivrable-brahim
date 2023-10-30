@@ -281,3 +281,80 @@ service:
 ```
 Customize these parameters according to your application's requirements. Defining configurable parameters in your Helm Chart allows for flexibility and reusability in your Kubernetes deployments.
 
+
+
+
+## Bonus Task: 3 Deploy the Helm Chart Through Terraform
+
+
+### 1. Write a Terraform Script
+
+Create a Terraform script that defines the Kubernetes resources you need. Below is an example Terraform script I had developed:
+
+
+```
+provider "helm" {
+  kubernetes {
+    config_path = "~/.kube/config"
+  }
+}
+
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+}
+
+resource "kubernetes_namespace" "example" {
+  metadata {
+    name = "brahim2"  # Namespace name
+  }
+}
+
+resource "helm_release" "example" {
+  name       = "ts-technical-test-app"
+  chart      = "ts-technical-test-app"  # Replace with your Helm Chart name
+  namespace  = kubernetes_namespace.example.metadata[0].name
+  values = [
+    file("~/ts-technical-test-app/values.yaml"),  # Path to your Helm Chart values file
+  ]
+}
+```
+### 2 Customize the Terraform Configuration
+Open the Terraform configuration file (helm-kubernetes.tf) and customize it to match your deployment requirements. In the provided Terraform script, you'll find the following key components:
+
+provider "helm": This configuration sets up Helm to work with your Kubernetes cluster.
+provider "kubernetes": This provides access to your Kubernetes cluster.
+resource "kubernetes_namespace": Defines the Kubernetes namespace where your deployment will reside.
+resource "helm_release": Specifies the Helm Chart deployment, including the name, chart name, and values file.
+Modify the values and configuration according to your specific Helm Chart and deployment needs. Ensure that you specify the correct paths and namespaces.
+
+### 3: Initialize Terraform
+Run the following command to initialize Terraform:
+
+```
+terraform init
+```
+### 4: Apply the Terraform Configuration
+Deploy the Helm Chart using Terraform by running:
+
+```
+terraform apply
+```
+Terraform will create the Helm Chart deployment in your Kubernetes cluster based on the provided configuration.
+
+### 5: Access Your Deployed Application
+After successful deployment, your application will be accessible within the specified namespace. Ensure to check the Helm Chart's documentation or README for any specific information on accessing your application.
+
+### 6: Optional Cleanup
+If needed, you can remove the deployed resources and clean up by running:
+
+```
+terraform destroy
+```
+Use this command when you no longer require the deployed resources.
+
+Author
+Brahim Bouallahui
+
+
+
+
