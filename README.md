@@ -83,7 +83,5 @@ This guide will help you containerize your TypeScript application using Docker. 
 
    This command runs a container from the image and maps port 3000 in the container to port 3000 on your host machine.
 
-Your TypeScript application is now Dockerized and accessible at `http://localhost:3000`. You can customize the Dockerfile or use a different base image if needed, but `node:lts-alpine` is a good choice for lightweight Node.js applications.
-```
-![image](https://github.com/caspa142/Delivrable-brahim/assets/118697002/5e0a778a-20c8-48b0-9634-f08419bf3675)
+
 
