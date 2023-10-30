@@ -217,7 +217,7 @@ resource "kubernetes_deployment" "example" {
     }
   }
 }
-
+```
 2. Apply the Terraform Script
 
 Use the following steps to apply the Terraform script:
@@ -226,22 +226,22 @@ Use the following steps to apply the Terraform script:
 
     Initialize the Terraform configuration:
 
-    bash
 
+```
 terraform init
-
+```
 Create an execution plan:
 
-bash
+```
 
 terraform plan
-
+```
 Apply the Terraform script to create the Kubernetes namespace and deployment:
 
-bash
+```
 
     terraform apply
-
+```
 3. Verify the Kubernetes Deployment
 
 After applying the Terraform script, you should have a Kubernetes namespace and a deployment running your Docker container. You can verify this by checking your Kubernetes cluster using the kubectl commands.
