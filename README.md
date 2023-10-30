@@ -216,7 +216,7 @@ resource "kubernetes_deployment" "example" {
       }
     }
   }
-}```
+}
 
 
 2. Apply the Terraform Script
