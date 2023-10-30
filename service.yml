@@ -1,0 +1,13 @@
+---
+# service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-techical-test-service
+spec:
+  selector:
+    app: ts-techical-test-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
