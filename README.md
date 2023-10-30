@@ -32,7 +32,7 @@ This guide will help you containerize your TypeScript application using Docker. 
 
 1. **Create a Dockerfile**
 
-   In the root directory of your project, create a Dockerfile to define how the Docker image for your application should be built. Below is an example Dockerfile:
+   In the root directory of your project, create a Dockerfile to define how the Docker image for your application should be built. Below is the Dockerfile I used:
 
    ```Dockerfile
    # Use the official Node.js image as the base image
@@ -67,7 +67,7 @@ This guide will help you containerize your TypeScript application using Docker. 
 
    Open a terminal, navigate to your project's directory, and run the following command to build the Docker image:
 
-   ```bash
+   ```
    docker build -t ts-techical-test-app .
    ```
 
@@ -77,7 +77,7 @@ This guide will help you containerize your TypeScript application using Docker. 
 
    Once the image is built, you can run a Docker container from it using the following command:
 
-   ```bash
+   ```
    docker run -p 3000:3000 ts-techical-test-app
    ```
 
@@ -87,7 +87,7 @@ This guide will help you containerize your TypeScript application using Docker. 
 
 ##  Task 2: Kubernetes Setup
 In this task, you will set up a local Kubernetes environment to deploy your TypeScript application. Follow these steps to get started:
-To do this task, I used K3S which is a highly available, certified Kubernetes distribution designed for production workloads in unattended and resource-constrained.
+To do this task, I used K3S v1.27.6 which is a highly available, certified Kubernetes distribution designed for production workloads in unattended and resource-constrained.
 
 ###   1. Write a Kubernetes Deployment YAML File
 
@@ -123,7 +123,7 @@ Now that you have your Deployment YAML file ready, you can deploy this configura
 
 - Use the following command to deploy your application:
 
-  ```bash
+  ```
   kubectl apply -f deployment.yml
   ```
 
@@ -354,6 +354,9 @@ Use this command when you no longer require the deployed resources.
 
 Author
 Brahim Bouallahui
+
+
+![Screenshot from 2023-10-30 12-12-48](https://github.com/caspa142/Delivrable-brahim/assets/118697002/0fac9dfe-aaf3-4977-89fd-389157fa50a3)
 
 
 
