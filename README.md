@@ -356,7 +356,6 @@ Author
 Brahim Bouallahui
 
 
-![Screenshot from 2023-10-30 12-12-48](https://github.com/caspa142/Delivrable-brahim/assets/118697002/0fac9dfe-aaf3-4977-89fd-389157fa50a3)
 
 
 
