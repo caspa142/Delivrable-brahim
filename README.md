@@ -253,7 +253,7 @@ Enjoy your Kubernetes deployment!
 
 
 ## Bonus task: 2 Setting Up a Helm Chart for Your Application
-
+The folder containing the helm chart is ts-techical-test-app.
 In this guide, we'll walk you through the process of creating a Helm Chart for your application and defining configurable parameters using Helm.
 
 ###  Step 1: Create a Helm Chart for Your Application
@@ -265,12 +265,12 @@ helm create ts-technical-test-app
 ```
 This will create a directory structure with the necessary files for your Helm Chart.
 
-Step 2: Package Your Kubernetes Resources in the Helm Chart
+### Step 2: Package Your Kubernetes Resources in the Helm Chart
 Inside the ts-technical-test-app directory, you'll find a templates directory where you can place your Kubernetes resource YAML files. You can copy your Kubernetes Deployment YAML into this directory.
 
 For example, if your Deployment YAML is named deployment.yaml, you can copy it to the templates directory.
 
-Step 3: Define Configurable Parameters in Your Helm Chart
+### Step 3: Define Configurable Parameters in Your Helm Chart
 In your Helm Chart's values.yaml file, you can define configurable parameters. For example, you can define parameters for replica count, service type, and any other values you want to make configurable. Here's an example of what your values.yaml file might look like:
 
 ```yaml
