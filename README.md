@@ -262,6 +262,7 @@ You can use the `helm create` command to create a Helm Chart skeleton. Here's ho
 
 ```shell
 helm create ts-technical-test-app
+```
 This will create a directory structure with the necessary files for your Helm Chart.
 
 Step 2: Package Your Kubernetes Resources in the Helm Chart
@@ -272,10 +273,11 @@ For example, if your Deployment YAML is named deployment.yaml, you can copy it t
 Step 3: Define Configurable Parameters in Your Helm Chart
 In your Helm Chart's values.yaml file, you can define configurable parameters. For example, you can define parameters for replica count, service type, and any other values you want to make configurable. Here's an example of what your values.yaml file might look like:
 
-yaml
-Copy code
+```yaml
+
 replicaCount: 1
 service:
   type: ClusterIP
+```
 Customize these parameters according to your application's requirements. Defining configurable parameters in your Helm Chart allows for flexibility and reusability in your Kubernetes deployments.
 
