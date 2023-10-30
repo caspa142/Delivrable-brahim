@@ -165,5 +165,89 @@ spec:
 These steps will help you deploy your TypeScript application on your local Kubernetes cluster and verify its accessibility using port forwarding.
 
 Happy Kubernetes deployment!
-```
+
+## Bonus Task: Terraform Script for Kubernetes Deployment
+
+In this bonus task, I wrote a Terraform script to set up a Kubernetes namespace and deploy your Docker container into it. Here's how to accomplish it:
+
+## 1. Write a Terraform Script
+
+Create a Terraform script that defines the Kubernetes resources you need. Below is my Terraform script :
+
+```hcl
+provider "kubernetes" {
+  config_path = "~/.kube/config"
+}
+
+resource "kubernetes_namespace" "example" {
+  metadata {
+    name = "brahim2"  # Namespace name
+  }
+}
+
+resource "kubernetes_deployment" "example" {
+  metadata {
+    name = "ts-techical-test-app-deployment"
+    namespace = kubernetes_namespace.example.metadata[0].name
+  }
+
+  spec {
+    replicas = 1
+
+    selector {
+      match_labels = {
+        app = "ts-techical-test-app"
+      }
+    }
+
+    template {
+      metadata {
+        labels = {
+          app = "ts-techical-test-app"
+        }
+      }
+
+      spec {
+        container {
+          name           = "ts-techical-test-app"
+          image          = "ts-techical-test-app:latest"  # Docker image to deploy
+          image_pull_policy = "IfNotPresent"  # Set the imagePullPolicy
+        }
+      }
+    }
+  }
+}
+
+2. Apply the Terraform Script
+
+Use the following steps to apply the Terraform script:
+
+    Make sure you have Terraform installed on your local machine.
+
+    Initialize the Terraform configuration:
+
+    bash
+
+terraform init
+
+Create an execution plan:
+
+bash
+
+terraform plan
+
+Apply the Terraform script to create the Kubernetes namespace and deployment:
+
+bash
+
+    terraform apply
+
+3. Verify the Kubernetes Deployment
+
+After applying the Terraform script, you should have a Kubernetes namespace and a deployment running your Docker container. You can verify this by checking your Kubernetes cluster using the kubectl commands.
+
+This Terraform script simplifies the process of setting up your Kubernetes environment and deploying your Docker container.
+
+Enjoy your Kubernetes deployment!
+
 
