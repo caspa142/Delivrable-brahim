@@ -85,13 +85,11 @@ This guide will help you containerize your TypeScript application using Docker. 
 
 
 
-```markdown
-# Task 2: Kubernetes Setup
-
+##  Task 2: Kubernetes Setup
 In this task, you will set up a local Kubernetes environment to deploy your TypeScript application. Follow these steps to get started:
 To do this task, I used K3S which is a highly available, certified Kubernetes distribution designed for production workloads in unattended and resource-constrained.
 
-## 1. Write a Kubernetes Deployment YAML File
+###   1. Write a Kubernetes Deployment YAML File
 
 To deploy your application to Kubernetes, you need a Deployment YAML file that specifies how your app should be deployed, including services and any necessary configurations. Below is an example YAML file for your reference:
 
@@ -119,7 +117,7 @@ spec:
           containerPort: 3000
 ```
 
-## 2. Deploy to Local Kubernetes Cluster
+### 2. Deploy to Local Kubernetes Cluster
 
 Now that you have your Deployment YAML file ready, you can deploy this configuration to your local Kubernetes cluster.
 
@@ -131,7 +129,7 @@ Now that you have your Deployment YAML file ready, you can deploy this configura
 
   This will create the necessary resources in your Kubernetes cluster.
 
-## 3. Verify Application Accessibility Using Port Forward
+### 3. Verify Application Accessibility Using Port Forward
 
 To ensure that your application is accessible, you can use port forwarding. The `service.yml` file defines a Kubernetes Service that allows you to access your application.
 
@@ -168,6 +166,4 @@ These steps will help you deploy your TypeScript application on your local Kuber
 
 Happy Kubernetes deployment!
 ```
-
-This README provides clear instructions for setting up Kubernetes, creating a Deployment YAML file, deploying to a local Kubernetes cluster, and verifying application accessibility using Markdown with headers, lists, and code blocks. Feel free to customize it further and add icons to enhance the content.
 
