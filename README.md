@@ -85,3 +85,89 @@ This guide will help you containerize your TypeScript application using Docker. 
 
 
 
+```markdown
+# Task 2: Kubernetes Setup
+
+In this task, you will set up a local Kubernetes environment to deploy your TypeScript application. Follow these steps to get started:
+To do this task, I used K3S which is a highly available, certified Kubernetes distribution designed for production workloads in unattended and resource-constrained.
+
+## 1. Write a Kubernetes Deployment YAML File
+
+To deploy your application to Kubernetes, you need a Deployment YAML file that specifies how your app should be deployed, including services and any necessary configurations. Below is an example YAML file for your reference:
+
+```yaml
+# deployment.yml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ts-techical-test-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ts-techical-test-app
+  template:
+    metadata:
+      labels:
+        app: ts-techical-test-app
+    spec:
+      containers:
+      - name: ts-techical-test-app
+        image: ts-techical-test-app:latest
+        imagePullPolicy: IfNotPresent  # Use the locally available image
+        ports:
+          containerPort: 3000
+```
+
+## 2. Deploy to Local Kubernetes Cluster
+
+Now that you have your Deployment YAML file ready, you can deploy this configuration to your local Kubernetes cluster.
+
+- Use the following command to deploy your application:
+
+  ```bash
+  kubectl apply -f deployment.yml
+  ```
+
+  This will create the necessary resources in your Kubernetes cluster.
+
+## 3. Verify Application Accessibility Using Port Forward
+
+To ensure that your application is accessible, you can use port forwarding. The `service.yml` file defines a Kubernetes Service that allows you to access your application.
+
+```yaml
+# service.yml
+apiVersion: v1
+kind: Service
+metadata:
+  name: ts-techical-test-service
+spec:
+  selector:
+    app: ts-techical-test-app
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
+```
+
+- Apply this Service configuration using the following command:
+
+  ```bash
+  kubectl apply -f service.yml
+  ```
+
+- To access your application, use port forwarding:
+
+  ```bash
+  kubectl port-forward service/ts-techical-test-service 8080:80
+  ```
+
+  Your application should now be accessible at `http://localhost:8080`.
+
+These steps will help you deploy your TypeScript application on your local Kubernetes cluster and verify its accessibility using port forwarding.
+
+Happy Kubernetes deployment!
+```
+
+This README provides clear instructions for setting up Kubernetes, creating a Deployment YAML file, deploying to a local Kubernetes cluster, and verifying application accessibility using Markdown with headers, lists, and code blocks. Feel free to customize it further and add icons to enhance the content.
+
