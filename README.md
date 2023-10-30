@@ -355,6 +355,17 @@ Use this command when you no longer require the deployed resources.
 Author
 Brahim Bouallahui
 
+## Annexe :
+![image](https://github.com/caspa142/Delivrable-brahim/assets/118697002/a0d33ff1-2810-4775-b280-2170ae650d4e)
+![image](https://github.com/caspa142/Delivrable-brahim/assets/118697002/6317819e-403e-487f-b815-2b2bcbd156f1)
+![image](https://github.com/caspa142/Delivrable-brahim/assets/118697002/379f59d5-a06e-46ee-af46-3cc7d43027d6)
+![image](https://github.com/caspa142/Delivrable-brahim/assets/118697002/4f7644e4-997e-4f5e-be57-baf078ece0c5)
+
+
+
+
+
+
 
 
 
