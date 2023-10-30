@@ -4,3 +4,6 @@
 ✔️ The files deployment.yml and service.yml are the delivrables related to the second task related to Kubernetes.
 
 ✔️ The file kubernetes.tf answer the first Bonus task and represents a Terraform script that sets up a Kubernetes namespace and deploys your Docker container into it
+✔️ The folder ts-techical-test-app contains the helm chart of the application.
+
+✔️ The file helm-kubernetes.tf enable the automated deplyment of the helm chart.
