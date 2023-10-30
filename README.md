@@ -2,7 +2,7 @@
 
 ## Repository Content
 
-- :white_check_mark: **Typescript Application and Dockerfile**
+- :white_check_mark: **ts-techical-test : Typescript Application and Dockerfile**
   - Source code for the Typescript application.
   - Dockerfile for building and running the application.
   <img src="https://img.icons8.com/color/48/000000/docker.png" width="20" height="20"/> <img src="https://img.icons8.com/color/48/000000/typescript.png" width="20" height="20"/>
