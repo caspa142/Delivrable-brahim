@@ -25,9 +25,7 @@
 
 This repository contains all the necessary components to run the project and manage its deployments. Enjoy exploring!
 
-Certainly, here's an improved README description on GitHub using headers, lists, colors, and icons for Dockerizing a TypeScript application:
 
-```markdown
 # Dockerizing Your TypeScript Application
 
 This guide will help you containerize your TypeScript application using Docker. Follow these steps to get started:
