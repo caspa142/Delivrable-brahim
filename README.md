@@ -224,9 +224,8 @@ resource "kubernetes_deployment" "example" {
 
 Use the following steps to apply the Terraform script:
 
-    Make sure you have Terraform installed on your local machine.
 
-    Initialize the Terraform configuration:
+Initialize the Terraform configuration:
 
 
 ```
